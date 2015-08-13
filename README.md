@@ -1,1 +1,1 @@
-"Jenkins CuTest parser plugin" 
+Jenkins CuTest parser plugin
