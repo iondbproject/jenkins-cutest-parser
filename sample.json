@@ -1,0 +1,48 @@
+{
+    "results": [
+        {
+            "error_at_line": 18,
+            "file": "test_example.c",
+            "function": "test_addstuff1_1",
+            "message": "condition was false, expected true"
+        },
+        {
+            "error_at_line": -1,
+            "file": "",
+            "function": "",
+            "message": ""
+        },
+        {
+            "error_at_line": -1,
+            "file": "",
+            "function": "",
+            "message": ""
+        },
+        {
+            "error_at_line": 32,
+            "file": "test_example.c",
+            "function": "test_stringequals_failure",
+            "message": "expected \"apple\" is not equal to actual \"orange\""
+        },
+        {
+            "error_at_line": -1,
+            "file": "",
+            "function": "",
+            "message": ""
+        },
+        {
+            "error_at_line": -1,
+            "file": "",
+            "function": "",
+            "message": ""
+        },
+        {
+            "error_at_line": -1,
+            "file": "",
+            "function": "",
+            "message": ""
+        }
+    ],
+    "total_tests": 7,
+    "total_passed": 5
+}
