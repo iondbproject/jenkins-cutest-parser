@@ -1,6 +1,7 @@
 package org.jenkinsci.plugins.jenkinscutestparser;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import hudson.Extension;
 import hudson.Launcher;
@@ -40,13 +41,25 @@ public class JenkinsCutestParser extends Recorder {
         }
 
         try {
-            JsonObject jobj = new Gson().fromJson(new FileReader(build.getWorkspace() + "/" + targFile), JsonObject.class);
-            listener.getLogger().println(jobj.get("results").toString());
+            PlanckOutputRoot testresult = new Gson().fromJson(new FileReader(build.getWorkspace() + "/" + targFile), PlanckOutputRoot.class);
+
+            for(PlanckOutput testcase: testresult.getResults()) {
+                if(testcase.passed()) { //Test passed, skip it
+                    continue;
+                }
+
+                listener.getLogger().println(testcase);
+                build.setResult(Result.FAILURE);
+            }
+
+            listener.getLogger().println(testresult.getSummary());
+            build.addAction(new JenkinsCutestDisplay(testresult, false)); //TODO capture finish flag and cleanup
         }
         catch(FileNotFoundException e) {
             listener.getLogger().printf("Couldn't find file %s. Was Planck called correctly before this step?\n", targFile);
             build.setResult(Result.FAILURE);
         }
+
         return true;
     }
 
