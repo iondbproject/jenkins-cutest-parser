@@ -1,6 +1,5 @@
 package org.jenkinsci.plugins.jenkinscutestparser;
 
-import com.google.gson.JsonObject;
 import hudson.model.Action;
 
 import java.util.List;

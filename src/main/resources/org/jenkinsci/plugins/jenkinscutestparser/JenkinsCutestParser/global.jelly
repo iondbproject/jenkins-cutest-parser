@@ -13,9 +13,6 @@
     so it should be straightforward to find them.
   -->
   <f:section title="Jenkins Cutest Parser">
-    <f:entry title="Fail always?" field="alwaysFail"
-      description="Tick to always fail a build.">
-      <f:checkbox />
-    </f:entry>
+
   </f:section>
 </j:jelly>
