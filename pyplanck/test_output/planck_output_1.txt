@@ -1,0 +1,4 @@
+<suite>
+<test>line:"1",file:"file.c",function:"test_sample",message:""</test>
+</summary>total_tests:"1",total_passed:"1"</summary>
+</suite>

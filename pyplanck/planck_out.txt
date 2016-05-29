@@ -1,4 +1,0 @@
-Hello!
-I'm some output from a wiring script.
-I'm going to be put inside a file.
-So far, things look like they're working pretty good.
